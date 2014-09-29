@@ -1,0 +1,9 @@
+[submodule "site-cookbooks/yum"]
+	path = site-cookbooks/yum
+	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "site-cookbooks/yum-ius"]
+	path = site-cookbooks/yum-ius
+	url = https://github.com/opscode-cookbooks/yum-ius.git
+[submodule "site-cookbooks/yum-epel"]
+	path = site-cookbooks/yum-epel
+	url = https://github.com/opscode-cookbooks/yum-epel.git

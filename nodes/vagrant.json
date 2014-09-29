@@ -1,0 +1,12 @@
+{
+  "run_list": [
+    "recipe[yum]",
+    "recipe[yum-ius]",
+    "recipe[yum-epel]",
+    "recipe[timezone]",
+    "recipe[lamp]"
+  ],
+  "automatic": {
+    "ipaddress": "vagrant"
+  }
+}
