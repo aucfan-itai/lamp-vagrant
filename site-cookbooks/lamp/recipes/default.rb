@@ -31,6 +31,8 @@ packages = %w{
     php54-dom
     php54-soap
     php54-gd
+    php54-devel
+    php54-pecl-xdebug
     mysql
     mysql-server
     postgresql
