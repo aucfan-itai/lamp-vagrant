@@ -19,34 +19,32 @@ packages = %w{
     zsh
     httpd
     mod_ssl
-    php54
-    php54-pdo
-    php54-common
-    php54-xml
-    php54-mysql
-    php54-pgsql
-    php54-cli
-    php54-fpm
-    php54-pear
-    php54-dom
-    php54-soap
-    php54-gd
-    php54-devel
-    php54-pecl-xdebug
+    php
+    php-pdo
+    php-common
+    php-xml
+    php-mysql
+    php-pgsql
+    php-cli
+    php-fpm
+    php-pear
+    php-dom
+    php-soap
+    php-gd
+    php-devel
+    php-pecl-xdebug
+    php-mbstring
     mysql
     mysql-server
     postgresql
+    nodejs
+    npm
     curl}
 
 packages.each do |pkg|
     package pkg do
         action [:install, :upgrade]
     end
-end
-
-execute "phpunit-install" do
-    command "pear config-set auto_discover 1; pear install pear.phpunit.de/PHPUnit"
-    not_if { ::File.exists?("/usr/bin/phpunit")}
 end
 
 execute "composer-install" do
@@ -56,6 +54,16 @@ end
 
 execute "ag-install" do
     command "rpm -ivh http://swiftsignal.com/packages/centos/6/x86_64/the-silver-searcher-0.13.1-1.el6.x86_64.rpm"
+end
+
+execute "coffeescript-install" do
+    command "npm install -g coffee-script"
+end
+
+%w{gcc make wget telnet readline-devel ncurses-devel gdbm-devel openssl-devel zlib-devel libyaml-devel}.each do |p|
+    package p do
+        action :install
+    end
 end
 
 %w{mysqld httpd}.each do |service_name|

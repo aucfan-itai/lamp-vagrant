@@ -7,3 +7,9 @@
 [submodule "site-cookbooks/yum-epel"]
 	path = site-cookbooks/yum-epel
 	url = https://github.com/opscode-cookbooks/yum-epel.git
+[submodule "site-cookbooks/phantomjs"]
+	path = site-cookbooks/phantomjs
+	url = https://github.com/jenkinslaw/phantomjs.git
+[submodule "site-cookbooks/casperjs-cookbook"]
+	path = site-cookbooks/casperjs-cookbook
+	url = https://github.com/jenkinslaw/casperjs-cookbook.git
